@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html ng-app="dream" lang="en">
+	<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+		<title>Dream Think Tank</title>
+		<intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS"/>
+		<script src="https://use.fontawesome.com/651fff420e.js"></script>
+		<!-- BOOTSTRAP -->
+    	<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    	<!-- INDEX.CSS -->
+    	<link rel="stylesheet" href="/css/index.css">
+    	<!-- JQUERY LIBRARIES -->
+    	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<!-- ANGULAR -->
+		<script src="/node_modules/angular/angular.min.js"></script>
+  		<!-- GOOGLE FONTS -->
+  		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	</head>
+	<body ng-controller="mainController">
+
+	<!-- DESKTOP LANDING PAGE -->
+	<div class="desktop-landing">
+		<div class="desktop-landing-header">
+			<div class="desktop-landing-header-options">
+				<a href="#" data-toggle="modal" data-target="#loginModal"><h4>Login |</h4></a>
+				<a href="#" data-toggle="modal" data-target="#signupModal"><h4>Signup |</h4></a>
+				<a href="https://dreamthinktank.wordpress.com"><h4>About Us</h4></a>
+			</div>
+		</div>
+		<div class="desktop-landing-brand">
+			<div class="landing-logo"></div>
+		</div>
+		<div class="info-section-wrap">
+			<div class="container">
+				<div class="info-section-top">
+					<h2>Dream Think Tank is community-engaged project that aims to create a space where people from all backgrounds can dream about their future and share a conversation about their dreams and goals with others.</h2>
+					<h2>Specifically, Dream Think Tank aims to: </h2>
+				</div>
+			</div>
+			<div class="info-section clearfix">
+				<div class="info-section-grid-outer clearfix" id="isgil">
+					<div class="info-section-grid-inner clearfix">
+						<h3>Develop a virtual and physical space to develop our dreams and goals for the future.</h3>
+					</div>
+				</div>
+				<div class="info-section-grid-outer clearfix">
+					<div class="info-section-grid-inner clearfix">
+						<h3>Explore and develop resources, best practices and an understanding of barriers to creativity and achievement.</h3>
+					</div>
+				</div>
+				<div class="info-section-grid-outer clearfix" id="isgir">
+					<div class="info-section-grid-inner clearfix">
+						<h3>Build a community network to foster learning about our shared dreams and goals.</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- DESKTOP LANDING PAGE -->
+		<!-- SIGNUP MODAL -->
+		<div class="modal fade clearfix" tabindex="-1" role="dialog" id="signupModal">
+		  <div class="modal-dialog clearfix" role="document">
+		    <div class="modal-content clearfix">
+		      <div class="modal-body clearfix">
+				<form action="/auth/signup" method="post" id="msform">
+				  <!-- progressbar -->
+				  	<div class="prog-wrap">
+					  	<ul id="progressbar">
+					    	<!--<li class="active"><h5 class="prog-txt">First Name</h5></li>
+					    	<li><h5 class="prog-txt">Last Name</h5></li>-->
+					    	<li class="active"><h5 class="prog-txt">Username</h5></li>
+					    	<li><h5 class="prog-txt">Password</h5></li>
+					    	<li><h5 class="prog-txt">Dream</h5></li>
+					    	<li><h5 class="prog-txt">Confirmation</h5></li>
+					    	<li><h5 class="prog-txt">Create</h5></li>
+					  	</ul>
+				  	</div>
+				  	<div class="fieldset-wrap">
+				  	<!--<fieldset>
+				  		<h1 class="fieldset-header">What's your first name?</h1>
+				  		<div class="form-items-con">
+					    	<input class="form-input" placeholder="First Name..." type="text" name="firstName" ng-model="firstname"/>
+					    </div>
+					    <input type="button" name="next" class="next action-button" value="Next" id="first-next"/>
+				  	</fieldset>
+				  	<fieldset>
+				  		<h1 class="fieldset-header">What's your last name?</h1>
+				  		<div class="form-items-con">
+					    	<input class="form-input" placeholder="Last Name..." type="text" name="lastName" ng-model="lastname"/>
+					    </div>
+					    <input type="button" name="previous" class="previous action-button" value="Previous" />
+					    <input type="button" name="next" class="next action-button" value="Next" />
+				  	</fieldset>-->
+				  	<fieldset>
+				  		<h1 class="fieldset-header">Pick a username.</h1>
+				  		<div class="form-items-con">
+					    	<input class="form-input" placeholder="Username..." type="text" name="username" ng-model="username"/>
+					    </div>
+					    <input type="button" name="previous" class="previous action-button" value="Previous" />
+					    <input type="button" name="next" class="next action-button" value="Next" />
+				  	</fieldset>
+				  	<fieldset>
+				  		<h1 class="fieldset-header">Choose a password.</h1>
+				  		<div class="form-items-con">
+					    	<input class="form-input" placeholder="Password..." type="text" name="password" ng-model="password"/>
+					    </div>
+					    <input type="button" name="previous" class="previous action-button" value="Previous" />
+					    <input type="button" name="next" class="next action-button" value="Next" />
+				  	</fieldset>
+				  	<fieldset>
+				  		<h1 class="fieldset-header">What's your dream?</h1>
+				  		<div class="form-items-con">
+					    	<textarea class="form-input" placeholder="Share Your Dream..." id="form-dream" type="text" name="dream" ng-model="dream"></textarea>
+					    </div>
+					    <input type="button" name="previous" class="previous action-button" value="Previous" />
+					    <input type="button" name="next" class="next action-button" value="Next" />
+				  	</fieldset>
+				  	<fieldset>
+				  		<h3 class="fieldset-header">Please confirm your information.</h3>
+				  		<div class="form-items-con">
+				  			<div class="confirmation-con">
+						    	<h4 class="confirmation-info">Username: @{{username}}</h4>
+						    	<h4 class="confirmation-info">Password: {{password}}</h4>
+						    	<h4 class="confirmation-info">Dream: {{dream}}</h4>
+					    	</div>
+					    </div>
+					    <input type="button" name="previous" class="previous action-button" value="Previous" />
+					    <input type="button" name="next" class="next action-button" value="Confirm" />
+				  	</fieldset>
+				  	<fieldset>
+					    <input type="submit" name="next" class="next action-button" value="Create My Account!" id="first-next"/>
+					    <h3 class="fieldset-header" id="or">Or</h3>
+					    <input type="button" name="previous" class="previous action-button" value="Go Back" id="first-next"/>
+					    <h4> Thank you for participating in our Dream Think Tank. This project is completely voluntary. All data will be anonymously shared for educational and research purposes unless otherwise specified. Please visit our About Us page for more information.</h4>
+				  	</fieldset>
+				  	</div>
+				</form>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- END SIGNUP MODAL -->
+		<!-- LOGIN MODAL -->
+		<div class="modal fade" tabindex="-1" role="dialog" id="loginModal">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-body">
+				<form action="/auth/login" method="post" id="msform">
+				  	<div class="fieldset-wrap">
+				  	<fieldset>
+				  		<h1 class="fieldset-header">Username</h1>
+				  		<div class="form-items-con">
+					    	<input class="form-input" placeholder="Username.." type="text" name="username"/>
+					    </div>
+					    <input type="button" name="next" class="next action-button" value="Next" id="first-next"/>
+				  	</fieldset>
+				  	<fieldset>
+				  		<h1 class="fieldset-header">Password</h1>
+				  		<div class="form-items-con">
+					    	<input class="form-input" placeholder="Password.." type="text" name="password"/>
+					    </div>
+					    <input type="submit" name="next" class="next action-button" value="Go" id="first-next"/>
+				  	</fieldset>
+				  	</div>
+				</form>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- END LOGIN MODAL -->	
+		<!-- BOOTSTRAP-->
+		<script src="/js/home.js"></script>
+		<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="/js/custom-form.js"></script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

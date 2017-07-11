@@ -1,0 +1,32 @@
+<div class="user-profile-con">
+	<div class="user-info-con">
+		<img class="user-profile-pic" ng-src="{{user.image}}"><br>
+
+
+
+  	<button class="btn btn-default btn-lg"type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+          accept="image/*" ngf-max-height="1000" ngf-max-size="1MB" style="margin-top: 15px;">
+          <span class="glyphicon glyphicon-camera"></span>
+    </button>
+
+
+
+	</div>
+	<div class="change-info-con">
+		<form method="post">
+			<h5>Dream</h5>
+			<textarea class="form-control" ng-model="user.dream" ng-blur="updateDream()" placeholder="{{user.dream}}"></textarea>
+			<h5>First Name</h5>
+			<input class="form-control" ng-model="user.firstName" ng-blur="updateFirstName()" placeholder="{{user.firstName}}">
+			<h5>Last Name</h5>
+			<input class="form-control" ng-model="user.lastName" ng-blur="updateLastName()" placeholder="{{user.lastName}}">
+			<h5>City</h5>
+			<input class="form-control" ng-model="user.city" ng-blur="updateCity()" placeholder="{{user.city}}">
+			<h5>State</h5>
+			<input class="form-control" ng-model="user.state" ng-blur="updateState()" placeholder="{{user.state}}">
+			<a href="#profile">
+				<button class="btn btn default" type="submit">Save</button>
+			</a>
+		</form>
+	</div>
+</div>

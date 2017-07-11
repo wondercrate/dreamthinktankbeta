@@ -1,0 +1,131 @@
+<div class="profile-con">
+	<div class="user-info-con">
+		<img class="user-profile-pic" ng-src="{{user.image}}">
+		<a href="#editProfile"><h6>Edit profile</h6></a>
+		<h4>{{user.firstName}} {{user.lastName}}</h4>
+		<h5>{{user.city}}, {{user.state}}</h5>
+		<h5>{{user.dream}}</h5>
+	</div>
+	<div class="goal-con">
+		
+		<div class="profile-tabs clearfix">
+			<div class="profile-tabs-con">
+				<button class="tabs-btn left active">Public Goals</button>
+			</div>
+			<div class="profile-tabs-con">
+				<button class="tabs-btn mid">Private Goals</button>
+			</div>
+			<div class="profile-tabs-con">
+				<button class="tabs-btn right">Accomplished Goals</button>
+			</div>
+		</div>
+		<div class="selection left show">
+			<div class="user-goals-and-feed-con clearfix">
+				<div class="goals-input-con clearfix">
+					<form>
+						<textarea ng-model="goal.content" class="goal-input" placeholder="Write your goal here.."></textarea>
+						<button class="btn btn-default btn-lg item-submit" type="submit" ng-click="postPublicGoal(goal)" style="float: right;">Submit</button>
+					</form>
+				</div>
+				<div class="goals-feed clearfix" ng-repeat="goal in userGoalsArray | filter: { public: true, accomplished: false }">
+					<div class="goals-feed-inner l">
+						<img class="goals-feed-pic" ng-src="{{user.image}}"/>
+						<h6>@{{user.username}}</h6>
+					</div>
+					<div class="goals-feed-inner c">
+						<h5 class="goals-feed-content">{{goal.content}}</h5>
+					</div>
+					<div class="goals-feed-inner l">
+						<div class="goal-actions">
+							<div class="goal-actions-con d">
+								<button class="goal-actions-btn d">Actions<span class="glyphicon glyphicon-chevron-down" style="padding-left: 5px;"></span></button>
+							</div>
+							<div class="goal-actions-con u">
+								<button class="goal-actions-btn u">Actions<span class="glyphicon glyphicon-chevron-up" style="padding-left: 5px;"></span></button>
+								<div class="actions">
+									<h6 style="color: green; font-weight: bold;" ng-click="accomplishedGoal(goal)">Accomplished</h6>
+									<h6 style="color: red; font-weight: bold;" ng-click="deleteGoal(goal._id)">Delete</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="selection mid">
+			<div class="user-goals-and-feed-con clearfix">
+				<div class="goals-input-con clearfix">
+					<form>
+						<textarea ng-model="goal.content" class="goal-input" placeholder="Write your goal here.."></textarea>
+						<button class="btn btn-default btn-lg item-submit" type="submit" ng-click="postPrivateGoal(goal)" style="float: right;">Submit</button>
+					</form>
+				</div>
+				<div class="goals-feed clearfix" ng-repeat="goal in userGoalsArray | filter: { public: false, accomplished: false }">
+					<div class="goals-feed-inner l">
+						<img class="goals-feed-pic" ng-src="{{user.image}}"/>
+						<h6>@{{user.username}}</h6>
+					</div>
+					<div class="goals-feed-inner c">
+						<h5 class="goals-feed-content">{{goal.content}}</h5>
+					</div>
+					<div class="goals-feed-inner l">
+						<div class="goal-actions">
+							<div class="goal-actions-con d">
+								<button class="goal-actions-btn d">Actions<span class="glyphicon glyphicon-chevron-down" style="padding-left: 5px;"></span></button>
+							</div>
+							<div class="goal-actions-con u">
+								<button class="goal-actions-btn u">Actions<span class="glyphicon glyphicon-chevron-up" style="padding-left: 5px;"></span></button>
+								<div class="actions">
+									<h6 style="color: green; font-weight: bold;" ng-click="accomplishedGoal(goal)">Accomplished</h6>
+									<h6 style="color: red; font-weight: bold;" ng-click="deleteGoal(goal._id)">Delete</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="selection right">
+			<div class="user-goals-and-feed-con clearfix">
+				<div class="goals-feed clearfix" ng-repeat="goal in allGoalsArray | filter: { accomplished: true }">
+					<div class="goals-feed-inner l">
+						<img class="goals-feed-pic" ng-src="{{user.image}}"/>
+						<h6>@{{user.username}}</h6>
+					</div>
+					<div class="goals-feed-inner c">
+						<h5 class="goals-feed-content">{{goal.content}}</h5>
+					</div>
+					<div class="goals-feed-inner l">
+						<div class="goal-actions">
+							<div class="goal-actions-con d">
+								<button class="goal-actions-btn d">Actions<span class="glyphicon glyphicon-chevron-down" style="padding-left: 5px;"></span></button>
+							</div>
+							<div class="goal-actions-con u">
+								<button class="goal-actions-btn u">Actions<span class="glyphicon glyphicon-chevron-up" style="padding-left: 5px;"></span></button>
+								<div class="actions">
+									<h6 style="color: red; font-weight: bold;" ng-click="deleteGoal(goal._id)">Delete</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

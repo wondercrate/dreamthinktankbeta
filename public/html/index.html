@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="dream" lang="en">
+	<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+		<title>Dream Think Tank</title>
+		<intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS"/>
+		<script src="https://use.fontawesome.com/651fff420e.js"></script>
+		<!-- JQUERY LIBRARIES -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<!-- BOOTSTRAP -->
+    	<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    	<script src="/node_modules/bootstrap/js/tab.js"></script>
+    	<script src="/node_modules/bootstrap/js/dropdown.js"></script>
+    	<!-- JQUERY LIBRARIES -->
+    	<!--<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>-->
+  		<!-- GOOGLE FONTS -->
+  		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  		<!-- ANGULAR -->
+		<script src="/node_modules/angular/angular.min.js"></script>
+    	<!--ANGULAR-ROUTE-->
+    	<script src="/node_modules/angular-route/angular-route.min.js"></script>
+    	<!-- INDEX.CSS -->
+    	<link rel="stylesheet" href="/css/index.css">
+		<!--JS-->
+		<script src="/js/index.js" type="text/javascript"></script>
+	</head>
+	<body ng-controller="mainController" ng-cloak>
+	<a href="/html/home.html"><h5 class="logout" style="color: #33cccc; position: absolute; left: 93%; font-size: 20px; z-index: 1000;">logout</h5></a>
+	<!-- SIDE NAV -->
+		<div class="side-nav">
+			<div class="side-nav-profile-con">
+				<a href="#profile"><img class="side-nav-user-pic" ng-src="{{user.image}}"></a>
+				<a href="#profile"><h4 class="side-nav-user-name">PROFILE</h4></a>
+				<a href="#map"><h4 class="side-nav-user-name">DREAMS</h4></a>
+				<a href="#feed"><h4 class="side-nav-user-name">GOALS</h4></a>
+			</div>
+		</div>
+	<!-- END SIDE NAV -->
+
+	<!-- BOTTOM MOBILE NAV -->
+		<nav class="navbar navbar-default navbar-fixed-bottom" id="mobile-footer">
+			<div class="mobile-footer-grid">test</div>
+			<div class="mobile-footer-grid">test</div>
+			<div class="mobile-footer-grid">test</div>
+		</nav>
+	<!-- END BOTTOM MOBILE NAV -->
+
+		<div ng-view class="route-window"></div>
+
+		<!-- MAP MODAL -->
+		<div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header" style="text-align: center;">
+		        <h4 class="modal-title" id="myModalLabel">This application would like to use you're location.<br>Click "YES" to allow, or click "NO" to deny.</h4>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" ng-click="denyLocation()" data-dismiss="modal">NO</button>
+		        <button type="button" class="btn btn-primary" ng-click="allowLocation()" data-dismiss="modal">YES</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	
+		<!-- BOOTSTRAP-->
+		<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<!-- LIBRARIES -->
+		<script src="/node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
+		<script src="/node_modules/ng-file-upload/dist/ng-file-upload-all.js"></script>
+		<script src="/node_modules/ng-file-upload/dist/ng-file-upload-shim.js"></script>
+		<script src="/js/custom-form.js"></script>
+		<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLzmnhfXY9fvlu2tGxqwWd0csMa3zgofo" async defer></script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
