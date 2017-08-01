@@ -326,7 +326,7 @@ angular.module('dream')
 					  title: obj.dream,
 					  image: obj.image
 					});
- 					var path = 'http://localhost:3000';
+ 					var path = 'https://dreamthinktank.org';
  					var tempImg = path + '/images/placeholder.jpg';
  					var image = path + obj.image;
 					var contentString = '<img style="height: 50px; width: 50px; border-radius: 8px; display: inline-block;" src="' + image + '"/>' + '<div style="display: inline-block; padding-left: 15px;">' + '@' + obj.username + '</div>' + '<div style="padding-top: 15px; width: 300px; line-height: 20px;">' + obj.dream + '</div>';
